@@ -9,7 +9,7 @@
 
 .column {
   float: left;
-  width: 33.33%;
+  width: 25.00%;
   padding: 5px;
 }
 
@@ -19,30 +19,46 @@
   clear: both;
   display: table;
 }
+.artImg{
+    border: 5px solid black;
+    height: 200px;
+    width: 200px;
+    
+}
+.header{
+    color: red;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 
     </style>
     </head>
-    <body> 
-        <h1 style="text-align:center">Inspirations</h1>
-        <h2 style="color:purple"></h2> 
-        <h2 style="color:green">Art</h2>
-        <div class="row">
-            <div class="column">
-              <img src = "Ghost Sprite.jpg" alt = "Ghost Sprite" style="width:100%">
-            </div>
-            <div class="column">
-                <img src = "jaggedBlade.jpg"  alt = "Jagged Blade" style="width:100%;height:200px">
-            </div>
-            <div class="column">
-                <img src = "levelDesign.jpg"  alt = "Level Design 2" style="width:100%;height:200px">
-            </div>
-        </div>
+    <body style = "background-color:grey"> 
+        <h1 class="header" style="text-align:center">Inspirations</h1>
+        <h2 class="header">Player Concept</h2> 
         <div class ="row">
             <div class="column">
-                <img src = "levelDesign2.png"  alt = "Level Design 2" style="width:100%">
+                <img src ="playerConcept.jpg" alt="Player Model"  class="artImg">
             </div>
             <div class="column">
-                    <img src = "DementorConceptArt.jpg"  alt = "DementorArt" style="width:100%">
+                <img src = "jaggedBlade.jpg"  alt = "Jagged Blade" class="artImg">
+            </div>
+       </div>
+        <h2 class="header">Enemies</h2>
+        <div class="row">
+            <div class="column">
+              <img src = "Ghost Sprite.jpg" alt = "Ghost Sprite" class="artImg">
+            </div>
+            <div class="column">
+                    <img src = "DementorConceptArt.jpg"  alt = "DementorArt" class="artImg">
+            </div>
+        </div>
+        <h2 class="header">Level Design</h2>
+        <div class="row">
+            <div class="column">
+                <img src = "levelDesign.jpg"  alt = "Level Design 2" class="artImg">
+            </div>
+            <div class="column">
+                <img src = "levelDesign2.png"  alt = "Level Design 2" class="artImg">
             </div>
         </div>        
     </body>
