@@ -1,14 +1,13 @@
 const net = require('net');
 
-const socket = net.connect(80, 'csusb.edu');
+const socket = net.connect(9999, 'localhost');
 
 socket.on('connect', onConnect);
 socket.on('data'   , processResponse);
 
 const httpRequestMessage = 
-  "GET / HTTP/1.1"           + "\r\n" + 
+  "GET /index.html HTTP/1.1"           + "\r\n" + 
   "Connection: close"        + "\r\n" +
-  "Host: csusb.edu"          + "\r\n" +
   ""                         + "\r\n";
 
 function onConnect() {
