@@ -33,14 +33,13 @@ app.post('/api/courses', (req, res) => {
         res.status(400).send(result.error);
         return;
    }
-
-    const course  = {//creates course Object after validation
-        //id: courses.length + 1,
+    const course  = {
+        id: courses.length + 1,
         id: req.body.id,
         name: req.body.name,
         badge: req.body.badge
    };
-   courses.push(course); //push course into array
+   courses.push(course);
    res.send(course);
 });
 
