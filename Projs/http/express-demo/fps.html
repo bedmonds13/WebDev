@@ -1,0 +1,56 @@
+<style>
+* { border: 1px solid green; }
+* { 
+    border-width: 1px;
+    border-color: green;
+    border-style: dashed;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    }
+</style>
+<canvas id="fps" width ="400" height="300"></canvas>
+
+    <script>
+    (function() {
+        const canvas = document.getElementById('fps');
+        const ctx    = canvas.getContext('2d');
+        
+        function text(){
+            
+        }
+        let x = 0;
+        let y = 0;
+        let t= performance.now() / 1000;
+        let fps = 60;
+
+        function draw(millis){
+            let dt = millis / 1000 - t;
+            t = millis / 1000;
+            
+            fps = .99 * fps + .01 / dt;
+
+
+
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(x, y, 110, 110)
+            x +=300 * dt;
+            y +=300 * dt;
+
+            ctx.fillStyle = 'purple';
+            ctx.font = '30px Arial';
+            ctx.fillText(fps, 20, 50);
+
+            /*if((x == 200) || (y == 200)){
+                x=0;
+                y=0;
+                }*/
+            requestAnimationFrame(draw);
+        }    
+        requestAnimationFrame(draw);
+    })();
+    
+    </script>
