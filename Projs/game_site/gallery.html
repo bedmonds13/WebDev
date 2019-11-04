@@ -2,45 +2,52 @@
 <html>
     <head>
     <title>Gallery</title>
+     
     <style>
-        * {
+    * {
   box-sizing: border-box;
 }
-
+/* allows up to four pictures on a row */ 
 .column {
   float:    left;
   width:    25.00%;
   padding:  5px;
 }
 
-/* Clearfix (clear floats) */
+/* Clearfix (clear floats)  */ 
 .row::after {
   content: "";
-  clear:   both;
+    clear: both;
   display: table;
 }
+/* change length of images */
 .artImg{
     border: 5px solid black;
     height: 200px;
-    width:  200px;
+     width: 200px;
     
 }
+/*for header */
 .header{
-    color:       red;
+          color: red;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+/*picture descriptions */
 .descriptions{
-    border:           3px solid black;
-    width:            350px;
+              border: 3px solid black;
+               width: 350px;
     background-color: white;
 
 }
 
     </style>
+
     </head>
+
     <body style = "background-color:grey"> 
+        
         <h1 class="header" style="text-align:center">Inspirations</h1>
-        <h2 class="header">Player Concept</h2> 
+        <h2 class="header">Player Concept</h2>         
         <div class ="row">
             <div class="column">
                 <img src ="playerConcept.jpg" alt="Player Model"  class="artImg">

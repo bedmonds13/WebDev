@@ -2,6 +2,7 @@ const Joi = require('joi');
 const express = require('express');
 const app = express();
 
+//used to receive .json files
 app.use(express.json());
 
 const courses = [//array of courses
@@ -33,6 +34,7 @@ app.post('/api/courses', (req, res) => {
         name: req.body.name,
         badge: req.body.badge
    };
+   res.write("Course aded!");
    courses.push(course); //push course into array
    res.send(course);
 });

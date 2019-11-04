@@ -1,0 +1,28 @@
+.column {
+    float:    left;
+    width:    25.00%;
+    padding:  5px;
+  }
+  
+  /* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear:   both;
+    display: table;
+  }
+.artImg{
+      border: 5px solid black;
+      height: 200px;
+      width:  200px;
+      
+  }
+header{
+      color:       red;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+.descriptions{
+      border:           3px solid black;
+      width:            350px;
+      background-color: white;
+  
+}
