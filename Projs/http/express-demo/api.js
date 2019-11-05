@@ -16,12 +16,12 @@ app.get('/', (req,res)=> {
     res.send('Hello World!');
 });
 
-app.get('/api/courses', (req, res) =>{
+app.get('/courses', (req, res) =>{
     res.send(courses);
 });
 
 //Post message for client to POST courses in array
-app.post('/api/courses', (req, res) => {
+app.post('/courses', (req, res) => {
     const result = validateCourse(req.body)
     if(result.error){
         res.status(400).send(result.error);
@@ -34,12 +34,12 @@ app.post('/api/courses', (req, res) => {
         name: req.body.name,
         badge: req.body.badge
    };
-   res.write("Course aded!");
+   res.write("Course added!");
    courses.push(course); //push course into array
    res.send(course);
 });
 
- app.put('/api/courses/:id', (req, res) =>{
+ app.put('/courses/:id', (req, res) =>{
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID does not exist');// 404
     
@@ -49,6 +49,7 @@ app.post('/api/courses', (req, res) => {
         return;
         }
     course.name = req.body.name;
+    course.badge = req.body.badge;
     res.send(course);
 });
 
@@ -60,7 +61,7 @@ app.post('/api/courses', (req, res) => {
 
     return Joi.validate(course, schema);
  }
-app.get('/api/courses/:id', (req, res) =>{
+app.get('/courses/:id', (req, res) =>{
 const course = courses.find(c => c.id === parseInt(req.params.id));
 if(!course) res.status(404).send('The course with the given ID does not exist');// 404
 res.send(course);
