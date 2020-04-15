@@ -1,2 +1,2 @@
-# CSE-322
- Web Page Projects
+ Web Page Projects/Programming
+ CSE 405
