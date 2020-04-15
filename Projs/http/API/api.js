@@ -20,6 +20,7 @@ app.get('/courses', (req, res) =>{
     res.send(courses);
 });
 
+//using Postman on chrome to interact with API
 //Post message for client to POST courses in array
 app.post('/courses', (req, res) => {
     const result = validateCourse(req.body)
@@ -30,10 +31,10 @@ app.post('/courses', (req, res) => {
 
     const course  = {//creates course Object after validation
         id: courses.length + 1,
-        //id: req.body.id,
         name: req.body.name,
         badge: req.body.badge
    };
+   
    res.write("Course added!");
    courses.push(course); //push course into array
    res.send(course);
