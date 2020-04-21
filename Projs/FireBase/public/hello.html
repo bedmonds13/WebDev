@@ -1,0 +1,29 @@
+
+<html>
+<title>
+    Class Registration
+</title>
+<style>
+.header{
+    text-align: center;
+
+}
+</style>
+<head>
+
+</head>
+<body>
+    <h1 class = "header" >Course Registration </h1>
+    <div class = "header"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</div>
+
+    <form action = http://localhost:5001/servdev-744a0/us-central1/app/courses method= "POST">  
+        <label for = "className"> Your name:</label>
+        <input type="text" name="name" id="className">
+
+        <label for = "classBadge"> Your badge number:</label>
+        <input type="text" name="badge" id="classBadge">
+        
+        <input type="submit"  value = "Submit"  >
+    </form>
+</body>
+</html>
