@@ -16,8 +16,9 @@
     <h1 class = "header" >Course Registration </h1>
     <div class = "header"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</div>
 
+    <!--form data being sent to API to give response-->
     <form action = https://us-central1-servdev-744a0.cloudfunctions.net/widgets/courses method= "POST">  
-        <label for = "className"> Your name:</label>
+        <label for = "className"> Course name:</label>
         <input type="text" name="name" id="className">
 
         <label for = "classBadge"> Your badge number:</label>

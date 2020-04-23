@@ -1,15 +1,15 @@
-'use strict';
 
-//enable firebase to use funnctions from api
-//enable schemas for validation
 
 //const joi = require('@hapi/joi');
+//server
 const express = require('express');
 const app = express();
+
+//enable firebase to use funnctions from api
 const firebaseFunctions = require('firebase-functions');
 const admin = require('firebase-admin');
 
-
+//middlerware
 const cors = require('cors')({origin: true});
 app.use(cors);
 
@@ -31,9 +31,6 @@ app.get("/courses", (req, res) => {
 
 
 app.post("/courses", (req, res) => {
-
-      
-   
       const course  = {//creates course Object after validation
       id: courses.length + 1,
       name: req.body.name,
@@ -44,16 +41,5 @@ app.post("/courses", (req, res) => {
     res.send(courses);
 
 });
-
-/*
-function validateCourse(course){
-  const schema = {//schema to only allow specific input
-      name: Joi.string().min(5).required(),
-      badge: Joi.string().min(8).required()
-  }; 
-
-  return Joi.validate(course, schema);
-}
-*/
 
 exports.widgets = firebaseFunctions.https.onRequest(app);
