@@ -5,6 +5,12 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   },
   "emulators": {
@@ -28,6 +34,6 @@
     "source": "functions"
   },
   "storage": {
-    "rules": "y"
+    "rules": "storage.rules"
   }
 }
