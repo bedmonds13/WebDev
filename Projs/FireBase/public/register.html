@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <title>
     Class Registration
@@ -8,23 +8,45 @@
     text-align: center;
 
 }
+.tab {
+ margin-left: 2.5em
+}
 </style>
 <head>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/__/firebase/7.14.3/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.3/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src ="UserLogin.js"></script>
 </head>
 <body>
-    <h1 class = "header" >Course Registration </h1>
-    <div class = "header"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</div>
-
+    <h1 class = "header"> Course Registration </h1>
+   
+    <p style = "text-align: center"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</p>
+    <form> </form>
     <!--form data being sent to API to give response-->
-    <form action = https://us-central1-servdev-744a0.cloudfunctions.net/widgets/courses method= "POST">  
-        <label for = "className"> Course name:</label>
+    <form  id = "register" style = "text-align: center" >
+            <label for = "className"> Course name:</label>
         <input type="text" name="name" id="className">
 
-        <label for = "classBadge"> Your badge number:</label>
+        <label for = "classBadge"> Preferred badge number:</label>
         <input type="text" name="badge" id="classBadge">
-        
-        <input type="submit"  value = "Submit"  >
+
+        <input type = "submit" id="classAdd" value="Add Course">       
     </form>
+    <script>
+        classAdd.addEventListener('click',function SubForm(){
+            ClassBadge = classBadge.value
+            ClassName = className.value
+            $.post("https://us-central1-servdev-744a0.cloudfunctions.net/widgets/courses",
+                {    
+                        name:ClassName,
+                        badge:ClassBadge
+                    },
+                    function(data,status){
+                        alert("data" + data + "\nStatus:" + status);
+                    })
+            })
+    </script>
 </body>
 </html>

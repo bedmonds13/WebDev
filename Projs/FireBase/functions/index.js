@@ -40,4 +40,5 @@ app.post("/courses", (req, res) => {
 
 });
 
+
 exports.widgets = firebaseFunctions.https.onRequest(app);
