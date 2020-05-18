@@ -15,13 +15,16 @@
   },
   "emulators": {
     "hosting": {
-      "port": 5001
+      "port": 5000
     },
     "functions": {
-      "port": 5000
+      "port": 5001
     },
     "database": {
       "port": 9000
+    },
+    "firestore": {
+      "port": 8080
     }
   },
   "database": {
@@ -35,5 +38,9 @@
   },
   "storage": {
     "rules": "storage.rules"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
