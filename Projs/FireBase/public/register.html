@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-<title>
-    Class Registration
-</title>
-<style>
-.header{
-    text-align: center;
-}
-.tab {
- margin-left: 2.5em
-}
-</style>
+<title> Class Registration </title>
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="/__/firebase/7.14.4/firebase-app.js"></script>
-    <script src="/__/firebase/7.14.4/firebase-auth.js"></script>
-    <script src="/__/firebase/7.14.4/firebase-firestore.js"></script>
-    <script src="/__/firebase/init.js"></script>
- 
-    
-   
+    <link   rel = "stylesheet" href ="register-style.css">
+    <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src = "/__/firebase/7.14.4/firebase-app.js"></script>
+    <script src = "/__/firebase/7.14.4/firebase-auth.js"></script>
+    <script src = "/__/firebase/7.14.4/firebase-firestore.js"></script>
+    <script src = "/__/firebase/init.js"></script>
 </head>
-<body>
-    <h1 class = "header"> Course Registration </h1>
-   
-    <p style = "text-align: center"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</p>
+<body style = "background-color: rgba(0, 139, 139, 0.555);"  >
+    <section id = "courseHeader">
+    <h1> Course Registration </h1>
+    </section>
+    <section>
+    <p style = "font-size:  large;"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</p>
     <!--form data being sent to API to give response-->
-    <form  id = "register" style = "text-align: center" >
-            <label for = "className"> Course name:</label>
-        <input type="text" name="name" id="className">
-        <label for = "classBadge"> Preferred badge number:</label>
-        <input type="text" name="badge" id="classBadge">
-        <input type = "submit" id="classAdd" value="Add Course">       
-    </form>
+    <div id ="courseForm">
+    <form id = "register">
+        <label  for  = "className"> Course name:</label>
+        <select name = "courseName" id = "className">
+            <option value = "unselected">       Pick a course     </option>
+            <option value = "Karate">           Karate     </option>
+            <option value = "Swimming">         Swimming   </option>
+            <option value = "Dance">            Dance      </option>
+            <option value = "Basketball ">      Basketball </option>
+            <option value = "Soccer">           Soccer     </option>
+        </select>
+        <label for   = "classBadge"     style = "margin-left: 50px;" > Preferred badge number:</label>
+        <input  style = "margin-left: 54px;"type  = "text"           name  = "badge"    id    ="classBadge">
+        <div   style = "text-align: right;">
+        <input type  = "submit"         id    = "classAdd" value ="Add Course">  
+        </div>  
+    </form>  
+    </div>
+</section>
     <script src = "UserStatusInfo.js"></script> 
     <script src = DataBase.js></script>
-
     <script>             
         CheckUserState();
-        findUser();
         classAdd.addEventListener('click',function SubForm(){
             ClassBadge = classBadge.value
             ClassName = className.value
             $.post("https://us-central1-servdev-744a0.cloudfunctions.net/widgets/courses",
                 {    
-                        name:ClassName,
-                        badge:ClassBadge
+                        name:  ClassName,
+                        badge: ClassBadge
                     },
                     function(data,status){
                         alert("data" + data + "\nStatus:" + status);

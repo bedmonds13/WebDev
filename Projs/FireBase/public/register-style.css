@@ -1,0 +1,20 @@
+#courseHeader
+{
+    font-size:        25px;
+    background-color: rgba(0, 139, 139, 0.5);
+    padding:          15px;
+    text-align:       center;
+    margin-left:      150px;
+    margin-right:     150px;
+}
+
+#courseForm
+{
+    background-color:rgba(0, 139, 139, 0.514);
+    margin-left:    25px;
+    margin-right:   25px;
+    padding-bottom: 40px;
+    padding-right:  25px;
+    padding-bottom: 200px;
+
+}

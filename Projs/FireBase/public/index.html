@@ -4,18 +4,16 @@
   <body>
     <div id = UserStatus> Logged out. Please sign in.    </div>
     <p>
-      <label  for = "email"> Email address: </label>
-      <input type ="text" name = "email" id="UserEmail">  
-      <label for = "password"> Password</label>
-      <input type="text" name="password" id="userPassword">
-      <input type ="submit" id = SignUp value = "Sign Up">
-      <input type="submit"    id=LogIn value = "Log in" >
+      <label for  = "email"> Email address: </label>
+      <input type = "text"   name = "email" id="UserEmail">  
+      <label for  = "password"> Password</label>
+      <input type = "text"   name = "password" id="userPassword">
+      <input type = "submit" id = SignUp value = "Sign Up">
+      <input type = "submit" id = LogIn value = "Log in" >
     </p>   
     <script src="/__/firebase/7.14.4/firebase-app.js"></script>
     <script src="/__/firebase/7.14.4/firebase-auth.js"></script>
     <script src="/__/firebase/7.14.4/firebase-firestore.js"></script> 
-    
-    
     <script src ="UserStatusInfo.js"></script>
     <script>
       intializeApp();
