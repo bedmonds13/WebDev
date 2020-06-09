@@ -18,3 +18,10 @@
     padding-bottom: 200px;
 
 }
+
+#UserCourseInfo
+{
+    background-color: rgba(0, 139, 139, 0.747);
+    margin-right: 750px; 
+    padding-top: 5px;
+}

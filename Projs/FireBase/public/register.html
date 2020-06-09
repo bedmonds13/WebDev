@@ -11,34 +11,39 @@
 </head>
 <body style = "background-color: rgba(0, 139, 139, 0.555);"  >
     <section id = "courseHeader">
-    <h1> Course Registration </h1>
+        <h1> Course Registration </h1>
     </section>
-    <section>
+    <section id = "courseForm">
     <p style = "font-size:  large;"> Register into courses here. If you are already enrolled in a course, scroll to the bottom of the screen to find other courses.</p>
     <!--form data being sent to API to give response-->
-    <div id ="courseForm">
-    <form id = "register">
-        <label  for  = "className"> Course name:</label>
-        <select name = "courseName" id = "className">
-            <option value = "unselected">       Pick a course     </option>
-            <option value = "Karate">           Karate     </option>
-            <option value = "Swimming">         Swimming   </option>
-            <option value = "Dance">            Dance      </option>
-            <option value = "Basketball ">      Basketball </option>
-            <option value = "Soccer">           Soccer     </option>
-        </select>
-        <label for   = "classBadge"     style = "margin-left: 50px;" > Preferred badge number:</label>
-        <input  style = "margin-left: 54px;"type  = "text"           name  = "badge"    id    ="classBadge">
-        <div   style = "text-align: right;">
-        <input type  = "submit"         id    = "classAdd" value ="Add Course">  
-        </div>  
-    </form>  
+    <div>
+        <form id = "register">
+            <label  for  = "className" style =" font-size: large;" > Course name:</label>
+            <select name = "courseName" id = "className">
+                <option value = "unselected">       Pick a course     </option>
+                <option value = "Karate">           Karate     </option>
+                <option value = "Swimming">         Swimming   </option>
+                <option value = "Dance">            Dance      </option>
+                <option value = "Basketball ">      Basketball </option>
+                <option value = "Soccer">           Soccer     </option>
+            </select>
+            <label for   = "classBadge"     style = "margin-left: 550px; font-size: large;" > Preferred badge number:</label>
+            <input  style = "margin-left: 70px;"type  = "text"           name  = "badge"    id    ="classBadge">
+            <div   style = "text-align: right;">
+                <input type  = "submit"         id    = "classAdd" value ="Add Course">  
+            </div>  
+        </form>  
+    </div>
+    <div id = "UserCourseInfo"  >
+        <h2 style = "text-align: center; font-size: x-large;">Registered Courses</h2>
+        <div></div>
     </div>
 </section>
     <script src = "UserStatusInfo.js"></script> 
     <script src = DataBase.js></script>
     <script>             
         CheckUserState();
+        SetUserInfo();
         classAdd.addEventListener('click',function SubForm(){
             ClassBadge = classBadge.value
             ClassName = className.value
@@ -50,7 +55,8 @@
                     function(data,status){
                         alert("data" + data + "\nStatus:" + status);
                     })
-            })
+                    addCourse();
+            });
         </script>
 </body>
 </html>
